@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+:root {
+    --primary:#222222;
+    --secondary: #4E4E4E;
+    --text: #FFFFFF;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: var(--primary);
+    font-family: 'Roboto', sans-serif;
+    color-scheme: dark;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+}
+
+.todo-container {
+    max-width: 32rem;
+    margin: auto;
+    
+    .header-container {
+        display: flex;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        margin: 1.25rem 0 0.75rem;
+
+        h1 {
+            color: var(--text);
+            margin: auto 0;
+            font-weight: normal;
+        }
+        
+        .fullscreen {
+            background: transparent;
+            color: var(--text);
+            margin: 0;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+    }
+
+    form {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 5%;
+        background-color: var(--secondary);
+        padding: 0.5rem;
+        backdrop-filter: blur(3px);
+        border-radius: 0.25rem;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+
+        input {
+            font-size: 1.5rem;
+            color: var(--text);
+            background-color: transparent;
+            border: none;
+            -webkit-box-flex: 1;
+                -ms-flex-positive: 1;
+                    flex-grow: 1;
+            width: 100%;
+            margin-right: 0.5rem;
+        }
+
+        input:focus {
+            outline: none;
+        }
+        input::placeholder {
+            color: var(--text);
+        }
+
+        button {
+            cursor: pointer;
+            transition: all 0.45s ease;
+        }
+    }
+
+    hr {
+        border-color: var(--secondary);
+        margin: 1rem 0 1rem 0;
+    }
+    .todo-list {
+        margin: 0;
+        padding: 0;
+
+        li {
+            margin: 0;
+            margin-top: 0.5rem;
+            border-radius: 0.25rem;
+            padding: 8px;
+            background: var(--secondary);
+            text-decoration: none;
+            list-style: none;
+
+            .todo {
+                margin: 0;
+                height: auto;
+                border-radius: 0.25rem;
+                padding: 0;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-pack: justify;
+                    -ms-flex-pack: justify;
+                        justify-content: space-between;
+                        align-items: center;
+                
+                .todo-item {
+                    color: var(--text);
+                }
+            }
+        }
+    }
+
+}
+
+.completed-btn {
+    min-width: 1.25rem;
+    height: 1.25rem;
+    width: 1.25rem;
+    border: 1px solid;
+    border-radius: 0;
+    background: none;
+    color: var(--text);
+    
+    .fa-check{
+        display: none;
+        text-decoration: none;
+    }
+}
+
+button {
+    min-width: 3rem;
+    height: 3rem;
+    width: 3rem;
+    border: 1px solid;
+    margin: 0 0 0 5px;
+    border-radius: 4px;
+    background: none;
+    color: var(--text);
+}
+
+.botones {
+    display: flex;
+    align-items: center;
+}
+
+.todo-item {
+    padding: 0rem 0.75rem;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: -webkit-fill-available;
+}
+
+.fa-check, .fa-trash, .fa-share-square, .fa-copy {
+    pointer-events: none;
+}
+
+.completed > .todo-item{
+    text-decoration: line-through;
+    opacity: 0.85;
+}
+
+.completed > .completed-btn > .fa-check {
+    display: block;
+    text-decoration: none;
+}
+
+
